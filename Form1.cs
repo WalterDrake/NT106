@@ -16,5 +16,12 @@ namespace CaroSpeedRun
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LANcaro lANcaro = new LANcaro();
+            lANcaro.Show();
+
+        }
     }
 }
