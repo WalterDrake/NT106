@@ -46,27 +46,81 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="about.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="about.Designer.cs">
+      <DependentUpon>about.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Addon_Custom_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Addon_Custom_Combobox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Addon_Custom_Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Addon_Round_Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Addon_Transparent_Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Caro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caro.Designer.cs">
+      <DependentUpon>Caro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="offline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="offline.Designer.cs">
+      <DependentUpon>offline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="help.Designer.cs">
+      <DependentUpon>help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="about.resx">
+      <DependentUpon>about.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caro.resx">
+      <DependentUpon>Caro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="offline.resx">
+      <DependentUpon>offline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="help.resx">
+      <DependentUpon>help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -75,6 +129,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play_bt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_bt.bmp" />
+    <Content Include="Resources\Screenshot 2024-06-02 134356.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
