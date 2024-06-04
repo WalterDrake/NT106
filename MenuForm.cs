@@ -46,8 +46,14 @@ namespace CaroSpeedRun
 
         private void offline_bt_Click(object sender, EventArgs e)
         {
+            
             Form form = new offline();
             form.ShowDialog();
+        }
+
+        private void setting_bt_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
