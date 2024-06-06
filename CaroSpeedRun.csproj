@@ -73,6 +73,9 @@
     <Compile Include="Caro.Designer.cs">
       <DependentUpon>Caro.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="offline.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,8 +94,13 @@
     <Compile Include="MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Socketdata.cs" />
+    <Compile Include="SocketManager.cs" />
+    <Compile Include="Table.cs" />
+    <Compile Include="Connection.cs" />
     <EmbeddedResource Include="about.resx">
       <DependentUpon>about.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +138,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\od.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\xd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\lose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\win.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\game.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\online.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\smallBackground.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

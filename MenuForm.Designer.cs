@@ -51,13 +51,14 @@ namespace CaroSpeedRun
             this.online_bt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.online_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.online_bt.ForeColor = System.Drawing.Color.Transparent;
-            this.online_bt.Location = new System.Drawing.Point(460, 344);
-            this.online_bt.Margin = new System.Windows.Forms.Padding(2);
+            this.online_bt.Location = new System.Drawing.Point(613, 423);
+            this.online_bt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.online_bt.Name = "online_bt";
-            this.online_bt.Size = new System.Drawing.Size(265, 83);
+            this.online_bt.Size = new System.Drawing.Size(353, 102);
             this.online_bt.TabIndex = 0;
             this.online_bt.TextColor = System.Drawing.Color.Transparent;
             this.online_bt.UseVisualStyleBackColor = false;
+            this.online_bt.Click += new System.EventHandler(this.online_bt_Click);
             // 
             // offline_bt
             // 
@@ -71,10 +72,10 @@ namespace CaroSpeedRun
             this.offline_bt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.offline_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.offline_bt.ForeColor = System.Drawing.Color.White;
-            this.offline_bt.Location = new System.Drawing.Point(476, 465);
-            this.offline_bt.Margin = new System.Windows.Forms.Padding(2);
+            this.offline_bt.Location = new System.Drawing.Point(635, 572);
+            this.offline_bt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.offline_bt.Name = "offline_bt";
-            this.offline_bt.Size = new System.Drawing.Size(228, 74);
+            this.offline_bt.Size = new System.Drawing.Size(304, 91);
             this.offline_bt.TabIndex = 1;
             this.offline_bt.TextColor = System.Drawing.Color.White;
             this.offline_bt.UseVisualStyleBackColor = false;
@@ -92,10 +93,10 @@ namespace CaroSpeedRun
             this.setting_bt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.setting_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.setting_bt.ForeColor = System.Drawing.Color.White;
-            this.setting_bt.Location = new System.Drawing.Point(963, 487);
-            this.setting_bt.Margin = new System.Windows.Forms.Padding(2);
+            this.setting_bt.Location = new System.Drawing.Point(1284, 599);
+            this.setting_bt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.setting_bt.Name = "setting_bt";
-            this.setting_bt.Size = new System.Drawing.Size(182, 36);
+            this.setting_bt.Size = new System.Drawing.Size(243, 44);
             this.setting_bt.TabIndex = 2;
             this.setting_bt.TextColor = System.Drawing.Color.White;
             this.setting_bt.UseVisualStyleBackColor = false;
@@ -113,10 +114,10 @@ namespace CaroSpeedRun
             this.about_bt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.about_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.about_bt.ForeColor = System.Drawing.Color.White;
-            this.about_bt.Location = new System.Drawing.Point(983, 538);
-            this.about_bt.Margin = new System.Windows.Forms.Padding(2);
+            this.about_bt.Location = new System.Drawing.Point(1311, 662);
+            this.about_bt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.about_bt.Name = "about_bt";
-            this.about_bt.Size = new System.Drawing.Size(151, 35);
+            this.about_bt.Size = new System.Drawing.Size(201, 43);
             this.about_bt.TabIndex = 3;
             this.about_bt.TextColor = System.Drawing.Color.White;
             this.about_bt.UseVisualStyleBackColor = false;
@@ -134,10 +135,10 @@ namespace CaroSpeedRun
             this.help_bt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.help_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.help_bt.ForeColor = System.Drawing.Color.White;
-            this.help_bt.Location = new System.Drawing.Point(1004, 588);
-            this.help_bt.Margin = new System.Windows.Forms.Padding(2);
+            this.help_bt.Location = new System.Drawing.Point(1339, 724);
+            this.help_bt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.help_bt.Name = "help_bt";
-            this.help_bt.Size = new System.Drawing.Size(100, 31);
+            this.help_bt.Size = new System.Drawing.Size(133, 38);
             this.help_bt.TabIndex = 4;
             this.help_bt.TextColor = System.Drawing.Color.White;
             this.help_bt.UseVisualStyleBackColor = false;
@@ -145,11 +146,11 @@ namespace CaroSpeedRun
             // 
             // MenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1186, 650);
+            this.ClientSize = new System.Drawing.Size(1581, 800);
             this.Controls.Add(this.help_bt);
             this.Controls.Add(this.about_bt);
             this.Controls.Add(this.setting_bt);
@@ -157,7 +158,7 @@ namespace CaroSpeedRun
             this.Controls.Add(this.online_bt);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caro Speedrun";
