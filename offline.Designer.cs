@@ -82,6 +82,7 @@
             this.pnTable.Name = "pnTable";
             this.pnTable.Size = new System.Drawing.Size(1722, 625);
             this.pnTable.TabIndex = 0;
+            this.pnTable.Paint += new System.Windows.Forms.PaintEventHandler(this.pnTable_Paint);
             // 
             // offline
             // 

@@ -140,7 +140,7 @@ namespace CaroSpeedRun
                 {
                     Button btn = new Button()
                     {
-                        BackColor = Color.White,
+                        BackColor = Color.Black,
                         FlatStyle = FlatStyle.Flat,
                         Height = SQUARE_SIZE,
                         Width = SQUARE_SIZE,
@@ -150,7 +150,7 @@ namespace CaroSpeedRun
                     };
                     btn.FlatAppearance.BorderColor = Color.Gainsboro;
                     btn.Parent = addon_Round_Panel1;
-                    btn.BackColor = Color.White;
+                    btn.BackColor = Color.Black;
                     btn.Click += Btn_Click;
                     addon_Round_Panel1.Controls.Add(btn);
                     buttonList[i].Add(btn);
@@ -167,8 +167,8 @@ namespace CaroSpeedRun
 
         private List<Player> Players = new List<Player>()
         {
-            new Player("server", Properties.Resources.x, Properties.Resources.xd),
-                new Player("client", Properties.Resources.o, Properties.Resources.od),
+            new Player("server", Properties.Resources.x, Properties.Resources.x),
+                new Player("client", Properties.Resources.o, Properties.Resources.o),
         };
         private void Btn_Click(object sender, EventArgs e)
         {
@@ -246,7 +246,7 @@ namespace CaroSpeedRun
                 for (int i = x - 1; i >= 0; i--)
                 {
                     if (buttonList[y][i].Image == thisButtonImage)
-                        buttonList[y][i].BackColor = Color.LightGreen;
+                        buttonList[y][i].BackColor = Color.Black;
                     else
                         break;
                 }
@@ -254,11 +254,11 @@ namespace CaroSpeedRun
                 for (int i = x + 1; i < TABLE_WIDTH; i++)
                 {
                     if (buttonList[y][i].Image == thisButtonImage)
-                        buttonList[y][i].BackColor = Color.LightGreen;
+                        buttonList[y][i].BackColor = Color.Black;
                     else
                         break;
                 }
-                buttonList[y][x].BackColor = Color.LightGreen;
+                buttonList[y][x].BackColor = Color.Black;
                 return true;
             }
             return false;
@@ -286,18 +286,18 @@ namespace CaroSpeedRun
                 for (int i = y - 1; i >= 0; i--)
                 {
                     if (buttonList[i][x].Image == thisButtonImage)
-                        buttonList[i][x].BackColor = Color.LightGreen;
+                        buttonList[i][x].BackColor = Color.Black;
                     else
                         break;
                 }
                 for (int i = y + 1; i < TABLE_HEIGHT; i++)
                 {
                     if (buttonList[i][x].Image == thisButtonImage)
-                        buttonList[i][x].BackColor = Color.LightGreen;
+                        buttonList[i][x].BackColor = Color.Black;
                     else
                         break;
                 }
-                buttonList[y][x].BackColor = Color.LightGreen;
+                buttonList[y][x].BackColor = Color.Black;
                 return true;
             }
 
@@ -326,16 +326,16 @@ namespace CaroSpeedRun
                 for (int i = x - 1, j = y - 1; i >= 0 && j >= 0; i--, j--)
                 {
                     if (buttonList[j][i].Image == thisButtonImage)
-                        buttonList[j][i].BackColor = Color.LightGreen;
+                        buttonList[j][i].BackColor = Color.Black;
                     else break;
                 }
                 for (int i = x + 1, j = y + 1; i < TABLE_WIDTH && j < TABLE_HEIGHT; i++, j++)
                 {
                     if (buttonList[j][i].Image == thisButtonImage)
-                        buttonList[j][i].BackColor = Color.LightGreen;
+                        buttonList[j][i].BackColor = Color.Black;
                     else break;
                 }
-                buttonList[y][x].BackColor = Color.LightGreen;
+                buttonList[y][x].BackColor = Color.Black;
                 return true;
             }
             return false;
@@ -365,18 +365,18 @@ namespace CaroSpeedRun
                 for (int i = x - 1, j = y + 1; i >= 0 && j < TABLE_HEIGHT; i--, j++)
                 {
                     if (buttonList[j][i].Image == thisButtonImage)
-                        buttonList[j][i].BackColor = Color.LightGreen;
+                        buttonList[j][i].BackColor = Color.Black;
                     else
                         break;
                 }
                 for (int i = x + 1, j = y - 1; i < TABLE_WIDTH && j >= 0; i++, j--)
                 {
                     if (buttonList[j][i].Image == thisButtonImage)
-                        buttonList[j][i].BackColor = Color.LightGreen;
+                        buttonList[j][i].BackColor = Color.Black;
                     else
                         break;
                 }
-                buttonList[y][x].BackColor = Color.LightGreen;
+                buttonList[y][x].BackColor = Color.Black;
                 return true;
             }
             return false;
@@ -659,7 +659,15 @@ namespace CaroSpeedRun
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void addon_Round_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     public class ButtonClickEvent : EventArgs
     {

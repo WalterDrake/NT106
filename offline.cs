@@ -95,7 +95,7 @@ namespace CaroSpeedRun
                 {
                     Button button = new Button()
                     {
-                        BackColor = Color.White,
+                        BackColor = Color.Black,
                         FlatStyle = FlatStyle.Flat,
                         Width = SQUARE_SIZE,
                         Height = SQUARE_SIZE,
@@ -105,7 +105,7 @@ namespace CaroSpeedRun
                     };
                     button.FlatAppearance.BorderColor = Color.Gainsboro;
                     button.Parent = pnTable;
-                    button.BackColor = Color.White;
+                    button.BackColor = Color.Black;
                     button.Click += btn_Click;
                     button.Tag = "0";
                     pnTable.Controls.Add(button);
@@ -941,7 +941,7 @@ namespace CaroSpeedRun
                     {
                         int x = rand.Next(TABLE_WIDTH);
                         int y = rand.Next(TABLE_HEIGHT);
-                        buttonList[y][x].BackColor = Color.White;
+                        buttonList[y][x].BackColor = Color.Black;
                         buttonList[y][x].Image = null;
                     }
                     i++;
@@ -969,7 +969,7 @@ namespace CaroSpeedRun
                 {
                     int x = rand.Next(TABLE_WIDTH);
                     int y = rand.Next(TABLE_HEIGHT);
-                    buttonList[y][x].BackColor = Color.WhiteSmoke;
+                    buttonList[y][x].BackColor = Color.Black;
                     buttonList[y][x].Image = null;
                 }
                 i++;
@@ -996,6 +996,9 @@ namespace CaroSpeedRun
             return true;
         }
 
+        private void pnTable_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }
