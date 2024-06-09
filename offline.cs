@@ -14,10 +14,10 @@ namespace CaroSpeedRun
     public partial class offline : Form
     {
         public List<List<Button>> buttonList = new List<List<Button>>();
-        public static int SCALE100_BUTTON_SIZE = 31;
+        public static int SCALE100_BUTTON_SIZE = 37;
         public static int SQUARE_SIZE;
-        public static int TABLE_WIDTH = 38;
-        public static int TABLE_HEIGHT = 16;
+        public static int TABLE_WIDTH = 33;
+        public static int TABLE_HEIGHT = 11;
         private bool isEndGame = false;
         private int number;
         public offline()

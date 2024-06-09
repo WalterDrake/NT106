@@ -78,7 +78,7 @@
             // 
             this.pnTable.CornerRadius = 25;
             this.pnTable.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnTable.Location = new System.Drawing.Point(16, 298);
+            this.pnTable.Location = new System.Drawing.Point(5, 301);
             this.pnTable.Name = "pnTable";
             this.pnTable.Size = new System.Drawing.Size(1722, 625);
             this.pnTable.TabIndex = 0;
