@@ -58,9 +58,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Impact", 7F, System.Drawing.FontStyle.Italic);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(392, 49);
+            this.label1.Location = new System.Drawing.Point(348, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 18);
+            this.label1.Size = new System.Drawing.Size(92, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Server IP address";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -70,10 +70,10 @@
             this.tbIPAddress.BackColor = System.Drawing.Color.Black;
             this.tbIPAddress.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Bold);
             this.tbIPAddress.ForeColor = System.Drawing.SystemColors.Window;
-            this.tbIPAddress.Location = new System.Drawing.Point(255, 15);
+            this.tbIPAddress.Location = new System.Drawing.Point(227, 12);
             this.tbIPAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbIPAddress.Name = "tbIPAddress";
-            this.tbIPAddress.Size = new System.Drawing.Size(239, 32);
+            this.tbIPAddress.Size = new System.Drawing.Size(213, 28);
             this.tbIPAddress.TabIndex = 3;
             // 
             // tbNameClient
@@ -81,10 +81,10 @@
             this.tbNameClient.BackColor = System.Drawing.SystemColors.MenuText;
             this.tbNameClient.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.tbNameClient.ForeColor = System.Drawing.SystemColors.Window;
-            this.tbNameClient.Location = new System.Drawing.Point(104, 245);
+            this.tbNameClient.Location = new System.Drawing.Point(92, 196);
             this.tbNameClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbNameClient.Name = "tbNameClient";
-            this.tbNameClient.Size = new System.Drawing.Size(221, 33);
+            this.tbNameClient.Size = new System.Drawing.Size(197, 29);
             this.tbNameClient.TabIndex = 6;
             this.tbNameClient.TextChanged += new System.EventHandler(this.tbNameClient_TextChanged);
             // 
@@ -93,27 +93,26 @@
             this.tbNameServer.BackColor = System.Drawing.SystemColors.MenuText;
             this.tbNameServer.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.tbNameServer.ForeColor = System.Drawing.SystemColors.Window;
-            this.tbNameServer.Location = new System.Drawing.Point(104, 441);
+            this.tbNameServer.Location = new System.Drawing.Point(92, 353);
             this.tbNameServer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbNameServer.Name = "tbNameServer";
-            this.tbNameServer.Size = new System.Drawing.Size(221, 33);
+            this.tbNameServer.Size = new System.Drawing.Size(197, 29);
             this.tbNameServer.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(24, 126);
+            this.dateTimePicker1.Location = new System.Drawing.Point(21, 101);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(224, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 10;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(543, 348);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(483, 278);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(83, 81);
+            this.pictureBox1.Size = new System.Drawing.Size(74, 65);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -124,10 +123,9 @@
             this.menu.Controls.Add(this.customLabel4);
             this.menu.Controls.Add(this.customLabel3);
             this.menu.Controls.Add(this.customLabel2);
-            this.menu.Location = new System.Drawing.Point(1444, 49);
-            this.menu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.menu.Location = new System.Drawing.Point(1284, 39);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(242, 380);
+            this.menu.Size = new System.Drawing.Size(215, 304);
             this.menu.TabIndex = 12;
             // 
             // customLabel4
@@ -136,9 +134,9 @@
             this.customLabel4.BackColor = System.Drawing.Color.Transparent;
             this.customLabel4.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customLabel4.ForeColor = System.Drawing.Color.DarkOrange;
-            this.customLabel4.Location = new System.Drawing.Point(73, 285);
+            this.customLabel4.Location = new System.Drawing.Point(65, 228);
             this.customLabel4.Name = "customLabel4";
-            this.customLabel4.Size = new System.Drawing.Size(99, 37);
+            this.customLabel4.Size = new System.Drawing.Size(81, 31);
             this.customLabel4.TabIndex = 15;
             this.customLabel4.Text = "Thoát";
             this.customLabel4.Click += new System.EventHandler(this.customLabel4_Click);
@@ -151,9 +149,9 @@
             this.customLabel3.BackColor = System.Drawing.Color.Transparent;
             this.customLabel3.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customLabel3.ForeColor = System.Drawing.Color.DarkOrange;
-            this.customLabel3.Location = new System.Drawing.Point(57, 64);
+            this.customLabel3.Location = new System.Drawing.Point(51, 51);
             this.customLabel3.Name = "customLabel3";
-            this.customLabel3.Size = new System.Drawing.Size(159, 44);
+            this.customLabel3.Size = new System.Drawing.Size(133, 37);
             this.customLabel3.TabIndex = 14;
             this.customLabel3.Text = "Ván Mới";
             this.customLabel3.Click += new System.EventHandler(this.customLabel3_Click);
@@ -166,9 +164,9 @@
             this.customLabel2.BackColor = System.Drawing.Color.Transparent;
             this.customLabel2.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customLabel2.ForeColor = System.Drawing.Color.DarkOrange;
-            this.customLabel2.Location = new System.Drawing.Point(72, 170);
+            this.customLabel2.Location = new System.Drawing.Point(64, 136);
             this.customLabel2.Name = "customLabel2";
-            this.customLabel2.Size = new System.Drawing.Size(115, 44);
+            this.customLabel2.Size = new System.Drawing.Size(95, 37);
             this.customLabel2.TabIndex = 13;
             this.customLabel2.Text = "Đi Lại";
             this.customLabel2.Click += new System.EventHandler(this.customLabel2_Click);
@@ -189,10 +187,10 @@
             this.btShowPausePanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btShowPausePanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btShowPausePanel.ForeColor = System.Drawing.SystemColors.Window;
-            this.btShowPausePanel.Location = new System.Drawing.Point(1652, 0);
+            this.btShowPausePanel.Location = new System.Drawing.Point(1468, 0);
             this.btShowPausePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btShowPausePanel.Name = "btShowPausePanel";
-            this.btShowPausePanel.Size = new System.Drawing.Size(102, 89);
+            this.btShowPausePanel.Size = new System.Drawing.Size(91, 71);
             this.btShowPausePanel.TabIndex = 9;
             this.btShowPausePanel.TextColor = System.Drawing.SystemColors.Window;
             this.btShowPausePanel.UseVisualStyleBackColor = false;
@@ -211,10 +209,10 @@
             this.btHost.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btHost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btHost.ForeColor = System.Drawing.SystemColors.Window;
-            this.btHost.Location = new System.Drawing.Point(35, 791);
+            this.btHost.Location = new System.Drawing.Point(31, 633);
             this.btHost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btHost.Name = "btHost";
-            this.btHost.Size = new System.Drawing.Size(548, 105);
+            this.btHost.Size = new System.Drawing.Size(487, 84);
             this.btHost.TabIndex = 8;
             this.btHost.TextColor = System.Drawing.SystemColors.Window;
             this.btHost.UseVisualStyleBackColor = false;
@@ -233,10 +231,10 @@
             this.btClient.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btClient.ForeColor = System.Drawing.SystemColors.Window;
-            this.btClient.Location = new System.Drawing.Point(35, 671);
+            this.btClient.Location = new System.Drawing.Point(31, 537);
             this.btClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btClient.Name = "btClient";
-            this.btClient.Size = new System.Drawing.Size(548, 105);
+            this.btClient.Size = new System.Drawing.Size(487, 74);
             this.btClient.TabIndex = 0;
             this.btClient.TextColor = System.Drawing.SystemColors.Window;
             this.btClient.UseVisualStyleBackColor = false;
@@ -247,10 +245,10 @@
             this.addon_Round_Panel1.BackColor = System.Drawing.Color.Transparent;
             this.addon_Round_Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.addon_Round_Panel1.CornerRadius = 25;
-            this.addon_Round_Panel1.Location = new System.Drawing.Point(656, 108);
+            this.addon_Round_Panel1.Location = new System.Drawing.Point(583, 86);
             this.addon_Round_Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addon_Round_Panel1.Name = "addon_Round_Panel1";
-            this.addon_Round_Panel1.Size = new System.Drawing.Size(1012, 788);
+            this.addon_Round_Panel1.Size = new System.Drawing.Size(900, 630);
             this.addon_Round_Panel1.TabIndex = 5;
             this.addon_Round_Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.addon_Round_Panel1_Paint);
             // 
@@ -261,10 +259,10 @@
             this.cbbIP.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.cbbIP.ForeColor = System.Drawing.Color.Ivory;
             this.cbbIP.FormattingEnabled = true;
-            this.cbbIP.Location = new System.Drawing.Point(505, 15);
+            this.cbbIP.Location = new System.Drawing.Point(449, 12);
             this.cbbIP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbIP.Name = "cbbIP";
-            this.cbbIP.Size = new System.Drawing.Size(32, 33);
+            this.cbbIP.Size = new System.Drawing.Size(29, 29);
             this.cbbIP.TabIndex = 4;
             // 
             // customLabel1
@@ -272,9 +270,9 @@
             this.customLabel1.AutoSize = true;
             this.customLabel1.BackColor = System.Drawing.Color.Transparent;
             this.customLabel1.ForeColor = System.Drawing.Color.White;
-            this.customLabel1.Location = new System.Drawing.Point(109, 89);
+            this.customLabel1.Location = new System.Drawing.Point(97, 71);
             this.customLabel1.Name = "customLabel1";
-            this.customLabel1.Size = new System.Drawing.Size(95, 20);
+            this.customLabel1.Size = new System.Drawing.Size(76, 16);
             this.customLabel1.TabIndex = 1;
             this.customLabel1.Text = "MIN      SEC";
             // 
@@ -283,19 +281,19 @@
             this.lblCountdown.AutoSize = true;
             this.lblCountdown.BackColor = System.Drawing.Color.Transparent;
             this.lblCountdown.ForeColor = System.Drawing.Color.White;
-            this.lblCountdown.Location = new System.Drawing.Point(100, 35);
+            this.lblCountdown.Location = new System.Drawing.Point(89, 28);
             this.lblCountdown.Name = "lblCountdown";
-            this.lblCountdown.Size = new System.Drawing.Size(40, 20);
+            this.lblCountdown.Size = new System.Drawing.Size(31, 16);
             this.lblCountdown.TabIndex = 0;
             this.lblCountdown.Text = "1:00";
             // 
             // Caro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1732, 940);
+            this.ClientSize = new System.Drawing.Size(1540, 752);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dateTimePicker1);
@@ -315,6 +313,7 @@
             this.Name = "Caro";
             this.Text = "Caro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Caro_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Caro_FormClosed);
             this.Load += new System.EventHandler(this.Caro_Load);
             this.Shown += new System.EventHandler(this.Caro_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
