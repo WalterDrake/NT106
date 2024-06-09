@@ -141,7 +141,7 @@ namespace CaroSpeedRun
                 Thread.Sleep(2000);
                 caro1.Invoke(new Action(() =>
                 {
-                    ptbPlay.Image = Properties.Resources.win;
+                    ptbPlay.Image = Properties.Resources.won;
                     ptbPlay.Visible = true;
 
                 }));

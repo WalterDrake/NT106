@@ -101,6 +101,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.Black;
             this.dateTimePicker1.Location = new System.Drawing.Point(21, 101);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";

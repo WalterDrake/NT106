@@ -37,10 +37,9 @@ namespace CaroSpeedRun
         public static int TABLE_HEIGHT = 17;
         private int number;
 
+        private string IPaddress = "";
         public Caro()
         {
-           
-
             InitializeComponent();
             Graphics graphics = CreateGraphics();
             float dpiX = graphics.DpiX;
@@ -495,9 +494,12 @@ namespace CaroSpeedRun
         {
             btHost.Enabled = false;
             btClient.Enabled = false;
-            tbIPAddress.Text = tbNameClient.Text.ToString();
-            socket.IP = tbNameClient.Text;
-            tbNameServer.Text = tbNameClient.Text.ToString();
+            // tbIPAddress.Text = tbNameClient.Text.ToString();
+            // socket.IP = tbNameClient.Text;
+            // tbNameServer.Text = tbNameClient.Text.ToString();
+            tbIPAddress.Text = IPaddress.ToString();
+            socket.IP = IPaddress;
+            tbNameServer.Text = IPaddress.ToString();
             if (!socket.ConnectSever())
             {
 
@@ -516,10 +518,15 @@ namespace CaroSpeedRun
         }
         private void Caro_Shown(object sender, EventArgs e)
         {
-            tbNameClient.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
-            if (string.IsNullOrEmpty(tbNameClient.Text))
+            IPaddress = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
+           /* tbNameClient.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);*/
+           /* if (string.IsNullOrEmpty(tbNameClient.Text))
             {
                 tbNameClient.Text = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
+            }*/
+            if (String.IsNullOrEmpty(IPaddress))
+            {
+                IPaddress = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
             }
         }
         private void tbNameClient_TextChanged(object sender, EventArgs e)
@@ -527,15 +534,21 @@ namespace CaroSpeedRun
         }
         private void btClient_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tbNameServer.Text))
+            /*if (string.IsNullOrEmpty(tbNameServer.Text))
+            {
+                MessageBox.Show("Bạn chưa điền server.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }*/
+            if (string.IsNullOrEmpty(tbIPAddress.Text))
             {
                 MessageBox.Show("Bạn chưa điền server.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             btClient.Enabled = false;
             btHost.Enabled = false;
-           
-            socket.IP = tbNameServer.Text;
+
+            // socket.IP = tbNameServer.Text;
+            socket.IP = IPaddress;
             if (!socket.ConnectSever())
             {
 
