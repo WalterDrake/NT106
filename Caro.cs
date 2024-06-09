@@ -108,7 +108,7 @@ namespace CaroSpeedRun
         void ChessBoard_EndedGame(object sender, EventArgs e)
         {
             ketthuc();
-           
+
         }
 
 
@@ -120,7 +120,7 @@ namespace CaroSpeedRun
         private void Caro_Load(object sender, EventArgs e)
         {
             menu.Visible = false;
-            
+
             InitializeBoard();
         }
         private void InitializeBoard()
@@ -166,12 +166,12 @@ namespace CaroSpeedRun
 
         private List<Player> Players = new List<Player>()
         {
-            new Player("server", Properties.Resources.x, Properties.Resources.x),
                 new Player("client", Properties.Resources.o, Properties.Resources.o),
+            new Player("server", Properties.Resources.x, Properties.Resources.x)
         };
         private void Btn_Click(object sender, EventArgs e)
         {
-           
+
             Button btn = sender as Button;
             int index = btn.Name.IndexOf("_");
             int x = Int32.Parse(btn.Name.Substring(2, index - 2));
@@ -453,7 +453,7 @@ namespace CaroSpeedRun
                     }));
                     break;
                 case (int)SocketComand.UNDO:
-                     undo();
+                    undo();
                     break;
                 case (int)SocketComand.END_GAME_LOSS:
                     this.Invoke((MethodInvoker)(() =>
@@ -477,7 +477,7 @@ namespace CaroSpeedRun
         {
 
             Button btn = buttonList[point.Y][point.X];
-            if (btn.Image!=null) return;
+            if (btn.Image != null) return;
 
             btn.Image = Players[now].Image;
             now = now == 0 ? 1 : 0;
@@ -511,7 +511,7 @@ namespace CaroSpeedRun
             {
                 socket.isServer = false;
                 addon_Round_Panel1.Enabled = false;
-              
+
                 listen();
             }
 
@@ -519,18 +519,15 @@ namespace CaroSpeedRun
         private void Caro_Shown(object sender, EventArgs e)
         {
             IPaddress = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
-           /* tbNameClient.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);*/
-           /* if (string.IsNullOrEmpty(tbNameClient.Text))
-            {
-                tbNameClient.Text = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
-            }*/
+            /* tbNameClient.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);*/
+            /* if (string.IsNullOrEmpty(tbNameClient.Text))
+             {
+                 tbNameClient.Text = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
+             }*/
             if (String.IsNullOrEmpty(IPaddress))
             {
                 IPaddress = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
             }
-        }
-        private void tbNameClient_TextChanged(object sender, EventArgs e)
-        {
         }
         private void btClient_Click(object sender, EventArgs e)
         {
@@ -546,7 +543,8 @@ namespace CaroSpeedRun
             }
             btClient.Enabled = false;
             btHost.Enabled = false;
-            tbNameServer.Text = IPaddress.ToString();
+            tbNameClient.Text = IPaddress.ToString();
+            tbNameServer.Text = tbIPAddress.Text.ToString();
             // socket.IP = tbNameServer.Text;
             socket.IP = IPaddress;
             if (!socket.ConnectSever())
@@ -559,9 +557,9 @@ namespace CaroSpeedRun
             else
             {
                 socket.isServer = false;
-                addon_Round_Panel1.Enabled = false;  
+                addon_Round_Panel1.Enabled = false;
                 listen();
-                     
+
             }
         }
 
@@ -570,7 +568,7 @@ namespace CaroSpeedRun
             if (isPanelVisible)
             {
                 // Ẩn Panel
-               menu.Visible = false;
+                menu.Visible = false;
                 isPanelVisible = false;
             }
             else
@@ -616,7 +614,7 @@ namespace CaroSpeedRun
         {
             undo();
             socket.Send(new SocketData((int)SocketComand.UNDO, "", new Point()));
-            
+
         }
         public bool undo()
         {
@@ -657,35 +655,20 @@ namespace CaroSpeedRun
 
         private void customLabel4_Click(object sender, EventArgs e)
         {
-           this.Close();
+            this.Close();
         }
 
         private void Caro_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
-                    try
-                    {
-                        socket.Send(new SocketData((int)SocketComand.QUIT, "", new Point()));
-                    }
-                    catch (Exception)
-                    {                    
-                        MessageBox.Show("Hẹn gặp lại.", "thông báo", MessageBoxButtons.OK);              
-                    }
-        }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addon_Round_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Caro_FormClosed(object sender, FormClosedEventArgs e)
-        {
-           
+            try
+            {
+                socket.Send(new SocketData((int)SocketComand.QUIT, "", new Point()));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hẹn gặp lại.", "thông báo", MessageBoxButtons.OK);
+            }
         }
     }
     public class ButtonClickEvent : EventArgs
