@@ -63,7 +63,6 @@
             this.label1.Size = new System.Drawing.Size(92, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Server IP address";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbIPAddress
             // 
@@ -116,7 +115,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(74, 65);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // menu
             // 
@@ -251,7 +249,6 @@
             this.addon_Round_Panel1.Name = "addon_Round_Panel1";
             this.addon_Round_Panel1.Size = new System.Drawing.Size(900, 630);
             this.addon_Round_Panel1.TabIndex = 5;
-            this.addon_Round_Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.addon_Round_Panel1_Paint);
             // 
             // cbbIP
             // 
@@ -314,7 +311,6 @@
             this.Name = "Caro";
             this.Text = "Caro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Caro_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Caro_FormClosed);
             this.Load += new System.EventHandler(this.Caro_Load);
             this.Shown += new System.EventHandler(this.Caro_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

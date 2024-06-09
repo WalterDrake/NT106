@@ -17,21 +17,6 @@ namespace CaroSpeedRun
             InitializeComponent();
         }
 
-        private void MenuForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PLay_bt_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addon_Custom_Button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void help_bt_Click(object sender, EventArgs e)
         {
             Form help_ = new help();
@@ -51,10 +36,6 @@ namespace CaroSpeedRun
             form.ShowDialog();
         }
 
-        private void setting_bt_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void online_bt_Click(object sender, EventArgs e)
         {

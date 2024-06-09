@@ -1,4 +1,4 @@
-﻿using LAN_Caro;
+using LAN_Caro;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -546,7 +546,7 @@ namespace CaroSpeedRun
             }
             btClient.Enabled = false;
             btHost.Enabled = false;
-
+            tbNameServer.Text = IPaddress.ToString();
             // socket.IP = tbNameServer.Text;
             socket.IP = IPaddress;
             if (!socket.ConnectSever())
@@ -699,3 +699,4 @@ namespace CaroSpeedRun
         public Point ClickedPoint { get => clickedPoint; set => clickedPoint = value; }
     }
 }
+

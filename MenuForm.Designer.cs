@@ -100,7 +100,6 @@ namespace CaroSpeedRun
             this.setting_bt.TabIndex = 2;
             this.setting_bt.TextColor = System.Drawing.Color.White;
             this.setting_bt.UseVisualStyleBackColor = false;
-            this.setting_bt.Click += new System.EventHandler(this.setting_bt_Click);
             // 
             // about_bt
             // 
@@ -162,7 +161,6 @@ namespace CaroSpeedRun
             this.Name = "MenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caro Speedrun";
-            this.Load += new System.EventHandler(this.MenuForm_Load);
             this.ResumeLayout(false);
 
         }
