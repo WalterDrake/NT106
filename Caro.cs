@@ -188,7 +188,7 @@ namespace CaroSpeedRun
                 socket.Send(new SocketData((int)SocketComand.END_GAME_LOSS, "", new Point()));
 
                 // Hiển thị thông báo thắng sau khi gửi thông điệp
-                CustomMessageBox message2 = new CustomMessageBox("You Win!", Color.Green);
+                CustomMessageBox message2 = new CustomMessageBox(Properties.Resources.won);
                 message2.ShowDialog();
 
             }
@@ -458,7 +458,7 @@ namespace CaroSpeedRun
                 case (int)SocketComand.END_GAME_LOSS:
                     this.Invoke((MethodInvoker)(() =>
                     {
-                        CustomMessageBox message1 = new CustomMessageBox("Game Over! You loss!", Color.BlueViolet);
+                        CustomMessageBox message1 = new CustomMessageBox(Properties.Resources.lose);
                         message1.ShowDialog();
                     }));
                     break;

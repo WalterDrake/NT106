@@ -107,6 +107,9 @@
     <EmbeddedResource Include="Caro.resx">
       <DependentUpon>Caro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="offline.resx">
       <DependentUpon>offline.cs</DependentUpon>
     </EmbeddedResource>

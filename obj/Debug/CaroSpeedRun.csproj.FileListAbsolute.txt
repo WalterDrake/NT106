@@ -1,0 +1,15 @@
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\bin\Debug\CaroSpeedRun.exe.config
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\bin\Debug\CaroSpeedRun.exe
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\bin\Debug\CaroSpeedRun.pdb
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\obj\Debug\CaroSpeedRun.csproj.AssemblyReference.cache
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\obj\Debug\CaroSpeedRun.about.resources
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\obj\Debug\CaroSpeedRun.Caro.resources
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\obj\Debug\CaroSpeedRun.offline.resources
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\obj\Debug\CaroSpeedRun.help.resources
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\obj\Debug\CaroSpeedRun.MenuForm.resources
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\obj\Debug\CaroSpeedRun.Properties.Resources.resources
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\obj\Debug\CaroSpeedRun.csproj.GenerateResource.cache
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\obj\Debug\CaroSpeedRun.csproj.CoreCompileInputs.cache
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\obj\Debug\CaroSpeedRun.exe
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\obj\Debug\CaroSpeedRun.pdb
+G:\laptrinhmangcanban\ĐỒ ÁN\metnhe\NT106\obj\Debug\CaroSpeedRun.CustomMessageBox.resources
