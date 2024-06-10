@@ -40,7 +40,8 @@ namespace CaroSpeedRun
             END_GAME_WIN,
             TIME_OUT,
             QUIT,
-            CONNECT_SUCCESS
+            CONNECT_SUCCESS,
+            SEND_IP
         }
     }
 }

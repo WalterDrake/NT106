@@ -36,6 +36,7 @@ namespace CaroSpeedRun
         public static int TABLE_WIDTH = 25;
         public static int TABLE_HEIGHT = 17;
         private int number;
+        private bool isUserTurn;
 
         private string IPaddress = "";
         public Caro()
@@ -63,7 +64,7 @@ namespace CaroSpeedRun
         }
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            // Giảm thời gian còn lại mỗi giây
+            /*// Giảm thời gian còn lại mỗi giây
             if (timeLeft.TotalSeconds > 0)
             {
                 timeLeft = timeLeft.Subtract(TimeSpan.FromSeconds(1));
@@ -75,7 +76,33 @@ namespace CaroSpeedRun
                 // Hết thời gian, dừng Timer
                 timer1.Stop();
                 MessageBox.Show("Time's up!");
+            }*/
+            if (timeLeft.TotalSeconds > 0)
+            {
+                timeLeft = timeLeft.Subtract(TimeSpan.FromSeconds(1));
+                lblCountdown.Text = timeLeft.ToString("mm\\:ss");
             }
+            else
+            {
+                timer1.Stop();
+                if (isUserTurn)
+                {
+                    MessageBox.Show("Time's up! Turn is forfeited.");
+                    EndUserTurn(); // Handle the end of the user's turn
+                }
+            }
+        }
+        private void EndUserTurn()
+        {
+            // Disable the user's ability to make a move
+            addon_Round_Panel1.Enabled = false;
+
+            // Notify the opponent about the turn end
+            socket.Send(new SocketData((int)SocketComand.END_GAME_LOSS, "", new Point()));
+
+            // Optionally, you can switch the turn to the opponent
+            now = now == 0 ? 1 : 0;
+            Changeplayer();
         }
         private void ResetTimer()
         {
@@ -108,12 +135,6 @@ namespace CaroSpeedRun
         void ChessBoard_EndedGame(object sender, EventArgs e)
         {
             ketthuc();
-
-        }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
         private bool isPanelVisible = false;
@@ -200,6 +221,17 @@ namespace CaroSpeedRun
         {
             // textBox1.Text = Players[now].Name;
             pictureBox1.Image = Players[now].Image;
+            /*Players[now].Name*/
+            if ((socket.isServer && Players[now].Name == "server") || (!socket.isServer && Players[now].Name == "client"))
+            {
+                isUserTurn = true;
+                StartTimer();
+            }
+            else
+            {
+                isUserTurn = false;
+                ResetTimer(); // Reset timer when it's not user's turn
+            }
         }
         public List<List<Button>> buttonList = new List<List<Button>>();
         private void EndGame()
@@ -409,7 +441,7 @@ namespace CaroSpeedRun
         }
         void listen()
         {
-            Thread listenThread = new Thread(() =>
+            /*Thread listenThread = new Thread(() =>
             {
                 try
                 {
@@ -420,6 +452,23 @@ namespace CaroSpeedRun
                 {
 
                     throw;
+                }
+            });
+            listenThread.IsBackground = true;
+            listenThread.Start();*/
+            Thread listenThread = new Thread(() =>
+            {
+                while (true)
+                {
+                    try
+                    {
+                        SocketData data = (SocketData)socket.Receive();
+                        ProcessData(data);
+                    }
+                    catch
+                    {
+                        break;
+                    }
                 }
             });
             listenThread.IsBackground = true;
@@ -468,6 +517,13 @@ namespace CaroSpeedRun
                     break;
                 case (int)SocketComand.CONNECT_SUCCESS:
                     MessageBox.Show("đôi thủ của bạn đã vào phòng");
+                    break;
+                case (int)SocketComand.SEND_IP:
+                    // Update tbNameClient with the client's IP address
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        tbNameClient.Text = data.Message;
+                    });
                     break;
 
             }
@@ -559,8 +615,13 @@ namespace CaroSpeedRun
                 socket.isServer = false;
                 addon_Round_Panel1.Enabled = false;
                 listen();
-
             }
+            // Send the client's IP address to the server
+            string clientIP = IPaddress.ToString();
+            socket.Send(new SocketData((int)SocketComand.SEND_IP, clientIP, new Point()));
+
+            // Send the CONNECT_SUCCESS command to the server
+            socket.Send(new SocketData((int)SocketComand.CONNECT_SUCCESS,"", new Point()));
         }
 
         private void btShowPausePanel_Click(object sender, EventArgs e)
