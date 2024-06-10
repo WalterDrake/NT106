@@ -26,7 +26,7 @@ namespace CaroSpeedRun
             try
             {
                 client.Connect(iep);
-                MessageBox.Show("đã vào phòng thành công");
+                MessageBox.Show("Bạn đã vào phòng");
                 return true;
             }
             catch
@@ -73,11 +73,10 @@ namespace CaroSpeedRun
         {
             try
             {
-                return target.Send(data) == 1 ? true : false;
+                return target.Send(data) == data.Length ? true : false;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

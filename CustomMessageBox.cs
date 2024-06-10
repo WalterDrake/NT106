@@ -1,48 +1,66 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
-using System.Windows.Forms;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace CaroSpeedRun
 {
     public class CustomMessageBox : Form
     {
-        public CustomMessageBox(string message, Color textColor)
+        private Button button1;
+
+        public CustomMessageBox(Image url)
         {
-            // Đặt thuộc tính Text để hiển thị thông điệp
-            Text = "Message";
+            // Đặt kích thước của form
+            this.Size = new Size(402, 237);
 
-            // Đặt thuộc tính Size để điều chỉnh kích thước của cửa sổ
-            Size = new Size(400, 200);
+            // Đặt hình nền và kiểu hiển thị hình nền
+            this.BackgroundImage = url;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
 
-            // Đặt thuộc tính StartPosition để đặt vị trí xuất hiện của cửa sổ
-            StartPosition = FormStartPosition.CenterScreen;
+            // Loại bỏ đường viền của form
+            this.FormBorderStyle = FormBorderStyle.None;
 
-            // Đặt thuộc tính ControlBox là false để ẩn các nút điều khiển cửa sổ (như nút đóng)
-            ControlBox = true;
+            // Đặt form xuất hiện ở trung tâm màn hình
+            this.StartPosition = FormStartPosition.CenterScreen;
 
-            // Tạo một Label để hiển thị thông điệp
-            Label label = new Label();
-            label.Text = message;
-            label.ForeColor = textColor;
-            label.Dock = DockStyle.Fill;
-            label.TextAlign = ContentAlignment.MiddleCenter;
-            label.Font = new Font("Mulish", 18, FontStyle.Bold);
+            // Thêm button để đóng form
+            Button closeButton = new Button();
+            closeButton.Size = new Size(30, 30);
+            closeButton.Location = new Point(361, 3);
+            closeButton.Text = "X"; // Bạn có thể thay đổi văn bản của nút
+            closeButton.Click += new EventHandler(CloseButton_Click);
 
-     
-
-            // Thêm Label và Button vào Controls của cửa sổ
-            Controls.Add(label);
-          
+            // Thêm button vào form
+            this.Controls.Add(closeButton);
         }
 
-        private void OkButton_Click(object sender, EventArgs e)
+        private void CloseButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); // Đóng form khi nút được nhấn
+        }
+
+        private void InitializeComponent()
+        {
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(361, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 26);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // CustomMessageBox
+            // 
+            this.ClientSize = new System.Drawing.Size(402, 237);
+            this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "CustomMessageBox";
+            this.ResumeLayout(false);
+
         }
     }
 }

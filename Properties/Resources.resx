@@ -127,9 +127,6 @@
   <data name="play_bt1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\play_bt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lose" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\lose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="o" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\o.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,5 +147,11 @@
   </data>
   <data name="smallBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\smallBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\lose.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="won" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\won.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

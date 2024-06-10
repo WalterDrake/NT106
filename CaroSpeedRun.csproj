@@ -103,6 +103,7 @@
     <Compile Include="Connection.cs" />
     <EmbeddedResource Include="about.resx">
       <DependentUpon>about.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Caro.resx">
       <DependentUpon>Caro.cs</DependentUpon>
@@ -165,6 +166,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\smallBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\lose.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\won.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

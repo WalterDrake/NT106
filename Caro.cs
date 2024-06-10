@@ -39,7 +39,7 @@ namespace CaroSpeedRun
 
         public Caro()
         {
-           
+
 
             InitializeComponent();
             Graphics graphics = CreateGraphics();
@@ -52,46 +52,6 @@ namespace CaroSpeedRun
             socket = new SocketManager();
             Changeplayer();
             graphics.Dispose();
-            timer1.Tick += Timer1_Tick;
-
-            // Đặt thời gian ban đầu (ví dụ: 1 phút)
-            initialTime = TimeSpan.FromMinutes(1);
-            // Đặt thời gian đếm ngược bằng thời gian ban đầu
-            timeLeft = initialTime;
-
-            // Hiển thị thời gian ban đầu
-            lblCountdown.Text = timeLeft.ToString("mm\\:ss");
-        }
-        private void Timer1_Tick(object sender, EventArgs e)
-        {
-            // Giảm thời gian còn lại mỗi giây
-            if (timeLeft.TotalSeconds > 0)
-            {
-                timeLeft = timeLeft.Subtract(TimeSpan.FromSeconds(1));
-                // Cập nhật hiển thị thời gian
-                lblCountdown.Text = timeLeft.ToString("mm\\:ss");
-            }
-            else
-            {
-                // Hết thời gian, dừng Timer
-                timer1.Stop();
-                MessageBox.Show("Time's up!");
-            }
-        }
-        private void ResetTimer()
-        {
-            // Dừng Timer
-            timer1.Stop();
-            // Đặt thời gian đếm ngược về thời gian ban đầu
-            timeLeft = initialTime;
-            // Cập nhật hiển thị thời gian
-            lblCountdown.Text = timeLeft.ToString("mm\\:ss");
-        }
-
-        private void StartTimer()
-        {
-            // Bắt đầu Timer
-            timer1.Start();
         }
 
         void ChessBoard_PlayerMarker(object sender, ButtonClickEvent e)
@@ -109,7 +69,7 @@ namespace CaroSpeedRun
         void ChessBoard_EndedGame(object sender, EventArgs e)
         {
             ketthuc();
-            socket.Send(new SocketData((int)SocketComand.END_GAME_LOSS, "", new Point()));
+
         }
 
 
@@ -121,7 +81,7 @@ namespace CaroSpeedRun
         private void Caro_Load(object sender, EventArgs e)
         {
             menu.Visible = false;
-            
+
             InitializeBoard();
         }
         private void InitializeBoard()
@@ -172,7 +132,7 @@ namespace CaroSpeedRun
         };
         private void Btn_Click(object sender, EventArgs e)
         {
-           
+
             Button btn = sender as Button;
             int index = btn.Name.IndexOf("_");
             int x = Int32.Parse(btn.Name.Substring(2, index - 2));
@@ -186,10 +146,12 @@ namespace CaroSpeedRun
                 playerMarked(this, new ButtonClickEvent(Getchesspoint(btn)));
             if (isEndGame(btn))
             {
+                socket.Send(new SocketData((int)SocketComand.END_GAME_LOSS, "", new Point()));
 
-                CustomMessageBox win = new CustomMessageBox("win", Color.Green);
-                win.ShowDialog();
-             
+                // Hiển thị thông báo thắng sau khi gửi thông điệp
+                CustomMessageBox message2 = new CustomMessageBox(Properties.Resources.won);
+                message2.ShowDialog();
+
             }
 
             playtimeline.Push(Getchesspoint(btn));
@@ -452,11 +414,14 @@ namespace CaroSpeedRun
                     }));
                     break;
                 case (int)SocketComand.UNDO:
-                     undo();
+                    undo();
                     break;
                 case (int)SocketComand.END_GAME_LOSS:
-                    CustomMessageBox message1 = new CustomMessageBox("Game Over! You loss!", Color.BlueViolet);
-                    message1.ShowDialog();
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        CustomMessageBox message1 = new CustomMessageBox(Properties.Resources.lose);
+                        message1.ShowDialog();
+                    }));
                     break;
 
                 case (int)SocketComand.QUIT:
@@ -473,7 +438,7 @@ namespace CaroSpeedRun
         {
 
             Button btn = buttonList[point.Y][point.X];
-            if (btn.Image!=null) return;
+            if (btn.Image != null) return;
 
             btn.Image = Players[now].Image;
             now = now == 0 ? 1 : 0;
@@ -488,8 +453,8 @@ namespace CaroSpeedRun
 
         private void btHost_Click(object sender, EventArgs e)
         {
-            btClient.Enabled = false;
             btHost.Enabled = false;
+            btClient.Enabled = false;
             tbIPAddress.Text = tbNameClient.Text.ToString();
             socket.IP = tbNameClient.Text;
             tbNameServer.Text = tbNameClient.Text.ToString();
@@ -504,7 +469,7 @@ namespace CaroSpeedRun
             {
                 socket.isServer = false;
                 addon_Round_Panel1.Enabled = false;
-              
+
                 listen();
             }
 
@@ -529,7 +494,7 @@ namespace CaroSpeedRun
             }
             btClient.Enabled = false;
             btHost.Enabled = false;
-           
+
             socket.IP = tbNameServer.Text;
             if (!socket.ConnectSever())
             {
@@ -541,9 +506,9 @@ namespace CaroSpeedRun
             else
             {
                 socket.isServer = false;
-                addon_Round_Panel1.Enabled = false;  
+                addon_Round_Panel1.Enabled = false;
                 listen();
-                     
+
             }
         }
 
@@ -552,7 +517,7 @@ namespace CaroSpeedRun
             if (isPanelVisible)
             {
                 // Ẩn Panel
-               menu.Visible = false;
+                menu.Visible = false;
                 isPanelVisible = false;
             }
             else
@@ -598,7 +563,7 @@ namespace CaroSpeedRun
         {
             undo();
             socket.Send(new SocketData((int)SocketComand.UNDO, "", new Point()));
-            
+
         }
         public bool undo()
         {
@@ -639,23 +604,19 @@ namespace CaroSpeedRun
 
         private void customLabel4_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void Caro_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc Muốn thoát không ?", "Notification", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-                e.Cancel = true;
-            else
+
+            try
             {
-                try
-                {
-                    socket.Send(new SocketData((int)SocketComand.QUIT, "", new Point()));
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
+                socket.Send(new SocketData((int)SocketComand.QUIT, "", new Point()));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hẹn gặp lại.", "thông báo", MessageBoxButtons.OK);
             }
         }
 
@@ -665,6 +626,11 @@ namespace CaroSpeedRun
         }
 
         private void addon_Round_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Caro_FormClosed(object sender, FormClosedEventArgs e)
         {
 
         }
