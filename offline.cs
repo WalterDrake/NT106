@@ -53,8 +53,8 @@ namespace CaroSpeedRun
             buttonList[y][x].Tag = "1";
             if (countVertical(x, y) || countHorizontal(x, y) || countMainDiag(x, y) || countSubDiag(x, y))
             {
-                MessageBox.Show("Congratulations! You Win!", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                isEndGame = true;
+                CustomMessageBox message2 = new CustomMessageBox(Properties.Resources.won);
+                message2.ShowDialog(); isEndGame = true;
                 return;
             }
 
@@ -131,7 +131,8 @@ namespace CaroSpeedRun
                         buttonList[y][x].Tag = "2";
                         if (countVertical(x, y) || countHorizontal(x, y) || countMainDiag(x, y) || countSubDiag(x, y))
                         {
-                            MessageBox.Show("Sorry, You Lose.", "Defeat", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            CustomMessageBox message1 = new CustomMessageBox(Properties.Resources.lose);
+                            message1.ShowDialog();
                             isEndGame = true;
                         }
 
